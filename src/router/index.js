@@ -11,7 +11,8 @@ import "../assets/css/global.css"
 import users from "../components/user/users.vue"
 import cases from "../components/case/cases.vue"
 import suites from "../components/case/suites.vue"
-
+import readTimeTask from "../components/task/RealTimeTask.vue"
+import realTimeTaskDetail from "../components/task/RealTimeTaskDetail.vue"
 Vue.use(VueRouter)
 const routes = [
   {
@@ -45,6 +46,14 @@ const routes = [
           }, {
             path: "/suites",
             component: suites
+          }, {
+            path: "/readTimeTask",
+            component: readTimeTask
+          },
+          {
+            path: "/realTimeTaskDetail/:id",
+            component: realTimeTaskDetail
+
           }
     ]
   },
@@ -72,7 +81,7 @@ router.beforeEach((to,from,next)=>{
     return next()
   }
   // 检查若没有登陆就跳转到登陆界面
-  // if (!localStorage.getItem("token")) { return next('/login')}
+  if (!localStorage.getItem("token")) { return next('/login')}
   next()
 
 })

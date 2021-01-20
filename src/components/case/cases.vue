@@ -28,7 +28,6 @@
                 <el-table-column label="期望值" prop="hope"></el-table-column>
                 <el-table-column label="操作">
                     <template slot-scope="scope">
-                        <el-button  type="text" size="small">查看</el-button>
                         <el-button type="text" size="small" @click="editShowCaseEvent(scope.row.id)">编辑</el-button>
                         <el-button type="text" size="small" @click="delCaseEvent(scope.row.id)">删除</el-button>
 

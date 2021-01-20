@@ -50,10 +50,10 @@
             <i class="el-icon-s-grid"></i>
             <span>任务管理</span>
           </template>
-          <el-menu-item index="3-1">
+          <el-menu-item :index="'/readTimeTask'">
             <template >
               <i class="el-icon-menu"></i>
-              <span>任务管理</span>
+              <span>实时任务</span>
             </template>
           </el-menu-item>
       </el-submenu>

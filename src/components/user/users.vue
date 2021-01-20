@@ -240,10 +240,10 @@ export default {
 
            });
         },
-        // 改变角色下拉组件
-        changeRoleEvent(event) {
-           this.editUserForm.roleId = event
-        },
+        // // 改变角色下拉组件
+        // changeRoleEvent(event) {
+        //    this.editUserForm.roleId = event
+        // },
         async delUserEvent(id) {
             const confirmResp = await this.$confirm('确定要删除吗?', '提示', {
                 confirmButtonText: '确定',
