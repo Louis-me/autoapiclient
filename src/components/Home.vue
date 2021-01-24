@@ -32,6 +32,12 @@
             <i class="el-icon-s-grid"></i>
             <span>用例管理</span>
           </template>
+          <el-menu-item :index="'/fuzzs'">
+            <template >
+              <i class="el-icon-menu"></i>
+              <span>模糊用例规则</span>
+            </template>
+          </el-menu-item>
           <el-menu-item :index="'/cases'">
             <template >
               <i class="el-icon-menu"></i>

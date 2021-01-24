@@ -96,8 +96,8 @@ export default {
                 name: [
                     { required: true, message: '请输入任务名', trigger: 'blur' },
                 ],
-                suite:[
-                    { required: true, message: '请选择套件', trigger: 'blur' }
+                suite_id:[
+                    { required: true, message: '请选择套件', trigger: 'change' }
                 ],
             },
         }
@@ -155,8 +155,6 @@ export default {
            });
         },
         async taskDetail(id) {
-            console.log("打开详情")
-            console.log(id)
              this.$router.push({
                 path:"/realTimeTaskDetail/"+ id,
             })
@@ -177,12 +175,12 @@ export default {
              return this.$message.info("已取消")
             } 
             console.log("执行删除逻辑")
-            //  let res = await this.$http.post("task_del/",{id: id})
-            //     if (res.data.code != 1) {
-            //        return this.$message.error(res.data.msg)
-            //     } 
-            //     this.$message.success('删除成功')
-            //     this.getTaskList()   
+             let res = await this.$http.post("real_time_task_del/",{id: id})
+                if (res.data.code != 1) {
+                   return this.$message.error(res.data.msg)
+                } 
+                this.$message.success('删除成功')
+                this.getTaskList()   
         }
         
     }

@@ -138,7 +138,7 @@ export default {
                 { required: true, message: '请输入密码', trigger: 'blur' }
             ],
             // 角色校验
-            role: [
+            roleId: [
             { required: true, message: '请选择角色', trigger: 'change' }
           ],
         },

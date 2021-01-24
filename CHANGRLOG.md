@@ -1,3 +1,9 @@
+## 2021-1-24
+- 新增实时任务的模糊用例展示
+
+![fuzz_case_detail](img/fuzz_case_detail.png)
+![fuzz_case_detail2](img/fuzz_case_detail_2.png)
+
 ## 2021-1-20
 - 新增实时任务
 - 查看实时任务执行情况

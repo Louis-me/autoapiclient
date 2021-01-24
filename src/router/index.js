@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+// npm install vue-json-viewer --save
+import JsonViewer from 'vue-json-viewer'
+Vue.use(JsonViewer)
+
 // 导入登陆组件
 import Login from '../components/Login.vue'
 // 登陆成功进入到Home组件
@@ -13,6 +18,7 @@ import cases from "../components/case/cases.vue"
 import suites from "../components/case/suites.vue"
 import readTimeTask from "../components/task/RealTimeTask.vue"
 import realTimeTaskDetail from "../components/task/RealTimeTaskDetail.vue"
+import fuzzs from "../components/case/fuzzs.vue"
 Vue.use(VueRouter)
 const routes = [
   {
@@ -53,7 +59,10 @@ const routes = [
           {
             path: "/realTimeTaskDetail/:id",
             component: realTimeTaskDetail
-
+          },
+          {
+            path: "/fuzzs",
+            component: fuzzs
           }
     ]
   },

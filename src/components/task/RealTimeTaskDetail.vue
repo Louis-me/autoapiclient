@@ -24,11 +24,18 @@
                             <el-form-item label="请求方法">
                                 <span>{{ props.row.method }}</span>
                             </el-form-item>
+                             <el-form-item label="入参">
+                                <span>
+                                     <json-viewer :value="props.row.params"></json-viewer>
+                                </span>
+                            </el-form-item>
                             <el-form-item label="期望结果">
                                 <span>{{ props.row.hope }}</span>
                             </el-form-item>
                             <el-form-item label="实际结果">
-                                <span>{{ props.row.fact }}</span>
+                                <span>
+                                     <json-viewer :value="props.row.fact"></json-viewer>
+                                </span>
                             </el-form-item>
                             <el-form-item label="是否通过">
                                 <span>{{ props.row.result }}</span>
@@ -74,7 +81,8 @@
     data() {
       return {
         id: this.$route.params.id,// 任务id,RealTimeTask.vue传过来的
-        tableData: []
+        tableData: [],
+        data: {"code": 1}
       }
     },
     created(){ 
@@ -88,6 +96,7 @@
             }
             this.tableData = res.data
         },
+  
      },
   }
 </script>
