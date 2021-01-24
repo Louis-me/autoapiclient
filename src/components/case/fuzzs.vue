@@ -47,7 +47,7 @@
                             <el-input  v-model="addFuzzForm.name"></el-input>
                         </el-form-item>
                           <el-form-item label="内容" prop="content">
-                            <el-input   type="textarea"   placeholder="请输入内容" v-model="addFuzzForm.name"></el-input>
+                            <el-input   type="textarea"   placeholder="请输入内容" v-model="addFuzzForm.content"></el-input>
                         </el-form-item>
                     </el-form>
                 <span slot="footer" class="dialog-footer">
@@ -146,7 +146,7 @@ export default {
         addFuzzEvent() {
             this.$refs.addFuzzFormRef.validate(async valid=>{
                if (!valid) return
-                let res = await this.$http.post("suite_add/",this.addFuzzForm)
+                let res = await this.$http.post("fuzz_add/",this.addFuzzForm)
                 if (res.data.code != 1) {
                    this.$message.error(res.data.msg)
                 } else{
