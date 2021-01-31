@@ -1,6 +1,6 @@
 import Vue from "vue"
 import { Input, Button, Form, FormItem,Message,Container,Header, Aside,Main, Menu,MenuItem,Submenu,Breadcrumb,BreadcrumbItem
-,Card,Row,Col,Table, TableColumn, Pagination, Dialog, Select,Option,MessageBox, Transfer, Switch} from 'element-ui';
+,Card,Row,Col,Table, TableColumn, Pagination, Dialog, Select,Option,MessageBox, Transfer, Switch, TimeSelect} from 'element-ui';
 
 Vue.use(Input);
 Vue.use(Button);
@@ -26,5 +26,7 @@ Vue.use(Select);
 Vue.use(Option);
 Vue.use(Transfer);
 Vue.use(Switch);
+Vue.use(TimeSelect);
+
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm

@@ -24,6 +24,11 @@ import readTimeTask from "../components/task/RealTimeTask.vue"
 import realTimeTaskDetail from "../components/task/RealTimeTaskDetail.vue"
 // 模糊用例
 import fuzzs from "../components/case/fuzzs.vue"
+// 定时任务管理
+import timingTask from "../components/task/TimingTask.vue"
+// 定时任务详情
+import timingTaskDetail from "../components/task/TimingTaskDetail.vue"
+
 Vue.use(VueRouter)
 const routes = [
   {
@@ -60,9 +65,16 @@ const routes = [
           }, {
             path: "/readTimeTask",
             component: readTimeTask
+          }, {
+            path: "/timingTask",
+            component: timingTask
           },
           {
             path: "/realTimeTaskDetail/:id",
+            component: realTimeTaskDetail
+          },
+          {
+            path: "/timingTaskDetail/:id",
             component: realTimeTaskDetail
           },
           {

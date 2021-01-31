@@ -62,6 +62,12 @@
               <span>实时任务</span>
             </template>
           </el-menu-item>
+            <el-menu-item :index="'/timingTask'">
+            <template >
+              <i class="el-icon-menu"></i>
+              <span>定时任务</span>
+            </template>
+          </el-menu-item>
       </el-submenu>
       <el-submenu index="4">
           <template slot="title">

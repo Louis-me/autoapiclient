@@ -1,10 +1,13 @@
+
 ## 2021-1-31
 
 - 新增模糊用例设置
 - 用例展示页面修改为折叠表格
+- 新增定时任务
 
 ![fuzzs](img/fuzzs.png)
 ![cases](img/cases.png)
+![timing_task](img/timing_task.png)
 
 ## 2021-1-24
 - 新增实时任务的模糊用例展示
