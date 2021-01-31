@@ -7,7 +7,7 @@
         </el-breadcrumb>
 
         <el-card class="box-card">
-           <el-row :gutter="20">
+             <el-row :gutter="20">
                 <el-col :span="7">
                      <el-input placeholder="请输入内容" v-model="queryInfo.query">
                         <el-button slot="append" icon="el-icon-search"
@@ -18,23 +18,52 @@
                     <el-button type="primary"  @click="addDialogVisible = true">添加</el-button>
                 </el-col>
             </el-row>
-           <el-table  :data="caseList">
-                <el-table-column type="index"></el-table-column>
-                <el-table-column label="接口名" prop="name"></el-table-column>
-                <el-table-column label="协议" prop="protocol"></el-table-column>
-                <el-table-column label="方法" prop="method"></el-table-column>
-                <el-table-column label="url" prop="url"></el-table-column>
-                <el-table-column label="入参" prop="params"></el-table-column>
-                <el-table-column label="期望值" prop="hope"></el-table-column>
+            <el-table
+                :data="caseList"
+                style="width: 100%">
+                <el-table-column type="expand">
+                    <template slot-scope="props">
+                        <el-form label-position="left" inline class="demo-table-expand">
+                            <el-form-item label="用例名">
+                                <span>{{ props.row.name }}</span>
+                            </el-form-item>
+                            <el-form-item label="url">
+                                <span>{{ props.row.url }}</span>
+                            </el-form-item>
+                            <el-form-item label="请求方法">
+                                <span>{{ props.row.method }}</span>
+                            </el-form-item>
+                             <el-form-item label="入参">
+                                <span>
+                                     <json-viewer :value="props.row.params"></json-viewer>
+                                </span>
+                            </el-form-item>
+                            <el-form-item label="期望结果">
+                                <span>{{ props.row.hope }}</span>
+                            </el-form-item>   
+                             <!-- <el-form-item label="操作">
+                                <el-button type="text" size="small" @click="editShowCaseEvent(scope.row.id)">编辑</el-button>
+                                <el-button type="text" size="small" @click="delCaseEvent(scope.row.id)">删除</el-button>
+                            </el-form-item>                      -->
+                        </el-form>
+                    </template>
+                </el-table-column>
+                <el-table-column
+                    label="用例名称"
+                    prop="name">
+                </el-table-column>
+                <el-table-column
+                    label="url"
+                    prop="url">
+                </el-table-column>
                 <el-table-column label="操作">
-                    <template slot-scope="scope">
+                      <template slot-scope="scope">
                         <el-button type="text" size="small" @click="editShowCaseEvent(scope.row.id)">编辑</el-button>
                         <el-button type="text" size="small" @click="delCaseEvent(scope.row.id)">删除</el-button>
-
                      </template>
                 </el-table-column>
-           </el-table>
-            <el-pagination
+            </el-table>
+             <el-pagination
                 @size-change="handleSizeChange"
                 @current-change="handleCurrentChange"
                 :current-page="queryInfo.pagenum"
@@ -43,7 +72,7 @@
                 layout="total, sizes, prev, pager, next, jumper"
                 :total="total">
             </el-pagination>
-            <el-dialog
+       <el-dialog
                 title="新增用例"
                 :visible.sync="addDialogVisible"
                 width="50%">
