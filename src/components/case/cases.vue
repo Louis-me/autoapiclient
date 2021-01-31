@@ -82,7 +82,7 @@
                             <el-input v-model="addCaseForm.params"></el-input>
                         </el-form-item>
                          <el-form-item label="期望结果" prop="hope">
-                            <el-input v-model="addCaseForm.hope"></el-input>
+                            <el-input v-model="addCaseForm.hope"  placeholder="code:1|msg:success"></el-input>
                         </el-form-item>
                     </el-form>
                 <span slot="footer" class="dialog-footer">
@@ -130,7 +130,7 @@
                             <el-input v-model="editCaseForm.params"></el-input>
                         </el-form-item>
                          <el-form-item label="期望结果" prop="hope">
-                            <el-input v-model="editCaseForm.hope"></el-input>
+                            <el-input v-model="editCaseForm.hope"  placeholder="code:1|msg:success"></el-input>
                         </el-form-item>
                     </el-form>
 
@@ -183,7 +183,7 @@ export default {
                 { required: true, message: '请输入url', trigger: 'blur' }
             ],
              hope:[
-                { required: true, message: '请输期望值,格式为{code:200}|{id:2}', trigger: 'blur' }
+                { required: true, message: '请输期望值,格式为code:200|id:2', trigger: 'blur' }
             ],
             method: [
             { required: true, message: '请选择请求方法', trigger: 'change' }
@@ -200,7 +200,7 @@ export default {
                 { required: true, message: '请输入url', trigger: 'blur' }
             ],
              hope:[
-                { required: true, message: '请输期望值,格式为{code:200}|{id:2}', trigger: 'blur' }
+                { required: true, message: '请输期望值,格式为code:200|id:2', trigger: 'blur' }
             ],
             method: [
             { required: true, message: '请选择请求方法', trigger: 'change' }
@@ -304,8 +304,6 @@ export default {
                 } 
                 this.$message.success('删除成功')
                 this.getCaseList()
-
-                
         }
         
     }

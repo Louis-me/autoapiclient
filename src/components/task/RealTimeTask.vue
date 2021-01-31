@@ -2,7 +2,7 @@
     <div class="Tasks">
         <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item>任务管理</el-breadcrumb-item>
+            <el-breadcrumb-item >任务管理</el-breadcrumb-item>
             <el-breadcrumb-item>实时任务</el-breadcrumb-item>
         </el-breadcrumb>
 
@@ -150,6 +150,7 @@ export default {
                 } else{
                     this.addDialogVisible = false
                     this.$message.success('新增成功')
+                     this.getTaskList()
                 }
 
            });

@@ -12,12 +12,17 @@ import Home from '../components/Home.vue'
 import welcome from '../components/welcome.vue'
 // 引用全局类
 import "../assets/css/global.css"
-
+// 用户管理
 import users from "../components/user/users.vue"
+// 用例管理
 import cases from "../components/case/cases.vue"
+// 套件管理
 import suites from "../components/case/suites.vue"
+// 实时任务管理
 import readTimeTask from "../components/task/RealTimeTask.vue"
+// 实时任务详情
 import realTimeTaskDetail from "../components/task/RealTimeTaskDetail.vue"
+// 模糊用例
 import fuzzs from "../components/case/fuzzs.vue"
 Vue.use(VueRouter)
 const routes = [

@@ -24,8 +24,8 @@
                 <el-table-column label="用例内容" prop="content"  tooltip-effect="light"></el-table-column>
                 <el-table-column label="操作">
                     <template slot-scope="scope">
-                        <el-button type="text" size="small" @click="editShowEvent(scope.row.id)" :disabled="scope.row.fuzz_type != 3">编辑</el-button>
-                        <el-button type="text" size="small" @click="delEvent(scope.row.id)" :disabled="scope.row.fuzz_type != 3">删除</el-button>
+                        <el-button type="text" size="small" @click="editShowEvent(scope.row.id)" :disabled="scope.row.fuzz_type != -3">编辑</el-button>
+                        <el-button type="text" size="small" @click="delEvent(scope.row.id)" :disabled="scope.row.fuzz_type != -3">删除</el-button>
                      </template>
                 </el-table-column>
            </el-table>
@@ -49,6 +49,8 @@
                           <el-form-item label="内容" prop="content">
                             <el-input   type="textarea"   placeholder="请输入内容" v-model="addFuzzForm.content"></el-input>
                         </el-form-item>
+                 
+                 
                     </el-form>
                 <span slot="footer" class="dialog-footer">
                     <el-button @click="resetaddFuzzEvent">重 置</el-button>
@@ -67,6 +69,7 @@
                           <el-form-item label="内容" prop="content">
                             <el-input   type="textarea"   placeholder="请输入内容" v-model="editFuzzForm.content"></el-input>
                         </el-form-item>
+                        
                     </el-form>
                   <span slot="footer" class="dialog-footer">
                     <el-button @click="editDialogVisible = false">取 消</el-button>
@@ -94,14 +97,14 @@ export default {
             addFuzzForm: {
                 name: '',
                 content: "",
-                fuzz_type: 3
+                fuzz_type: -3
             },
             // 编辑
             editFuzzForm: {
                 id:'',
                 name: '',
                 content: '',
-                fuzz_type: 3
+                fuzz_type: -3
             },
         // 使用验证功能
             rules: {
