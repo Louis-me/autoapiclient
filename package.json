@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "el-tree-transfer": "^2.4.7",
     "element-ui": "^2.14.1",
     "less": "^3.13.0",
     "less-loader": "^7.1.0",

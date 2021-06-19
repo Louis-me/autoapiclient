@@ -108,7 +108,7 @@
                             <el-input v-model="addCaseForm.url"></el-input>
                         </el-form-item>
                          <el-form-item label="入参" prop="入参">
-                            <el-input v-model="addCaseForm.params"></el-input>
+                            <el-input v-model="addCaseForm.params"  type="textarea" :rows="2" @change="isJSON('add')" placeholder='{"a":"b"}'></el-input>
                         </el-form-item>
                          <el-form-item label="期望结果" prop="hope">
                             <el-input v-model="addCaseForm.hope"  placeholder="code:1|msg:success"></el-input>
@@ -156,7 +156,7 @@
                             <el-input v-model="editCaseForm.url"></el-input>
                         </el-form-item>
                          <el-form-item label="入参" prop="入参">
-                            <el-input v-model="editCaseForm.params"></el-input>
+                            <el-input v-model="editCaseForm.params"  type="textarea" :rows="2" @change="isJSON('edit')"></el-input>
                         </el-form-item>
                          <el-form-item label="期望结果" prop="hope">
                             <el-input v-model="editCaseForm.hope"  placeholder="code:1|msg:success"></el-input>
@@ -240,6 +240,7 @@ export default {
         }
         }
     },
+
      created(){
          this.getCaseList()
      },
@@ -269,6 +270,9 @@ export default {
              this.getCaseList()
         },
         addCaseEvent() {
+            if (!this.isJSON("add")) {
+                return
+            }
             this.$refs.addCaseFormRef.validate(async valid=>{
                if (!valid) return
                 let res = await this.$http.post("case_add/",this.addCaseForm)
@@ -302,6 +306,9 @@ export default {
             this.$refs.addCaseFormRef.resetFields();
       },
        editCaseEvent() {
+             if (!this.isJSON("edit")) {
+                return
+            }
             this.$refs.editCaseformRef.validate(async valid=>{
                if (!valid) return
                 let res = await this.$http.post("case_edit/",this.editCaseForm)
@@ -333,7 +340,34 @@ export default {
                 } 
                 this.$message.success('删除成功')
                 this.getCaseList()
+        },
+    isJSON(param) {
+        if (param == "add") {
+            var str = this.addCaseForm.params
+
+        } else if (param=="edit") {
+            var str = this.editCaseForm.params
         }
+
+           if (str == null || str == undefined || str == '') { return true;  }
+  
+            try {
+                var obj=JSON.parse(str);
+                if(typeof obj == 'object' && obj ){
+                    return true;
+                }else{
+                    this.$message.error('入参请填入正确json')
+                    return false;
+                }
+
+            } catch(e) {
+                console.log('error：'+str+'!!!'+e);
+                this.$message.error('入参请填入正确json')
+                return false;
+            }
+           
+        }
+        
         
     }
     
