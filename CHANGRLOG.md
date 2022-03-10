@@ -6,7 +6,7 @@
 
 - 新增导出excel功能
 
-![export.png](img/export.png)
+![export.png](img/export.PNG)
 
 - 接口耗时统计
 
