@@ -2,11 +2,11 @@
 
 - 新增图形报告统计
 
-![](img\echarts.png)
+![echarts.png](img/echarts.png)
 
 - 新增导出excel功能
 
-![](img/export.png)
+![export.png](img/export.png)
 
 - 接口耗时统计
 
