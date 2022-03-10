@@ -24,6 +24,9 @@
                 <el-table-column label="关联套件" prop="suite_name"></el-table-column>
                 <el-table-column label="开始时间" prop="start_time"></el-table-column>
                 <el-table-column label="任务状态" prop="task_state_name"></el-table-column>
+                 <el-table-column label="用例通过" prop="passed"></el-table-column>
+                <el-table-column label="用例失败" prop="failed"></el-table-column>
+                <el-table-column label="耗时" prop="sum_time"></el-table-column>
 
                 <el-table-column label="操作">
                     <template slot-scope="scope">
@@ -64,8 +67,8 @@
                             <el-time-select 
                                 v-model="addTaskForm.start_time"
                                 :picker-options="{
-                                start: '01:00',
-                                step: '00:05',
+                                start: '16:00',
+                                step: '00:01',
                                 end: '24:00'
                                 }"
                                 placeholder="选择时间">
@@ -91,9 +94,9 @@ export default {
     data() {
         return {
             start_time:"",
-            taskList:[],// 实时任务列表
+            taskList:[],// 任务列表
             suiteList: [], // 套件列表
-            total: 0, // 实时任务数据总数
+            total: 0, // 任务数据总数
             addDialogVisible: false, // 控制任务添加对话框显示或隐藏
             queryInfo: {
                 query:'',
@@ -161,6 +164,7 @@ export default {
         addTaskEvent() {
             this.$refs.addTaskformRef.validate(async valid=>{
                if (!valid) return
+               this.addTaskForm.start_time = this.addTaskForm.start_time + ":00"
                 let res = await this.$http.post("new_timing_task/",this.addTaskForm)
                 if (res.data.code != 1) {
                    this.$message.error(res.data.msg)

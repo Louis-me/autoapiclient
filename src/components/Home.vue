@@ -74,10 +74,16 @@
             <i class="el-icon-s-grid"></i>
             <span>报告管理</span>
           </template>
-          <el-menu-item index="4-1">
+          <el-menu-item :index="'/reportTask'">
             <template >
               <i class="el-icon-menu"></i>
-              <span>测试报告</span>
+              <span>图形报告分析</span>
+            </template>
+          </el-menu-item>
+           <el-menu-item :index="'/reportListTask'">
+            <template >
+              <i class="el-icon-menu"></i>
+              <span>报告管理</span>
             </template>
           </el-menu-item>
       </el-submenu>

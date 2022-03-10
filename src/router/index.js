@@ -28,7 +28,12 @@ import fuzzs from "../components/case/fuzzs.vue"
 import timingTask from "../components/task/TimingTask.vue"
 // 定时任务详情
 import timingTaskDetail from "../components/task/TimingTaskDetail.vue"
-
+// 图形报告管理
+import reportTask from "../components/task/ReportTask.vue"
+// 报告管理
+import reportListTask from "../components/task/ReportListTask.vue"
+// 报告详情
+import reporDetail from "../components/task/ReportDetail.vue"
 Vue.use(VueRouter)
 const routes = [
   {
@@ -75,12 +80,24 @@ const routes = [
           },
           {
             path: "/timingTaskDetail/:id",
-            component: realTimeTaskDetail
+            component: timingTaskDetail
           },
           {
             path: "/fuzzs",
             component: fuzzs
-          }
+          },
+          {
+            path: "/reportTask",
+            component: reportTask
+          },
+          {
+            path: "/reportListTask",
+            component: reportListTask
+          },
+          {
+            path: "/reporDetail/:id",
+            component: reporDetail
+          },
     ]
   },
 

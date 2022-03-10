@@ -2,8 +2,7 @@
     <div class="TasksDetail">
         <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item>任务管理</el-breadcrumb-item>
-            <el-breadcrumb-item :to="{ path: '/timingTask'}">定时任务</el-breadcrumb-item>
+            <el-breadcrumb-item :to="{ path: '/reportListTask'}">报告管理</el-breadcrumb-item>
             <el-breadcrumb-item>任务详情</el-breadcrumb-item>
 
         </el-breadcrumb>
@@ -39,7 +38,10 @@
                             </el-form-item>
                             <el-form-item label="是否通过">
                                 <span>{{ props.row.result }}</span>
-                            </el-form-item>                          
+                            </el-form-item>  
+                            <el-form-item label="耗时(ms)">
+                                <span>{{ props.row.sum_time }}</span>
+                            </el-form-item>                           
                         </el-form>
                     </template>
                 </el-table-column>
@@ -80,7 +82,7 @@
   export default {
     data() {
       return {
-        id: this.$route.params.id,// 任务id,RealTimeTask.vue传过来的
+        id: this.$route.params.id,// 任务id,ReportListTask.vue传过来的
         tableData: [],
         data: {"code": 1}
       }
@@ -90,8 +92,7 @@
     },
      methods:{ 
          async getTaskDetail(){
-             // 实时任务和定时任务测试报告为同一个
-            const {data:res}  = await this.$http.get('real_time_task_detail/'+this.id,)
+            const {data:res}  = await this.$http.get('reports_detail/'+this.id,)
             if (res.code != 1){
                 return this.$message.erro("获取列表失败")
             }

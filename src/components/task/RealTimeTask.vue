@@ -23,7 +23,9 @@
                 <el-table-column label="任务名" prop="name"></el-table-column>
                 <el-table-column label="关联套件" prop="suite_name"></el-table-column>
                 <el-table-column label="任务状态" prop="task_state_name"></el-table-column>
-
+                <el-table-column label="用例通过" prop="passed"></el-table-column>
+                <el-table-column label="用例失败" prop="failed"></el-table-column>
+                <el-table-column label="耗时" prop="sum_time"></el-table-column>
                 <el-table-column label="操作">
                     <template slot-scope="scope">
                         <el-button type="text" size="small" @click="taskDetail(scope.row.id)">详情</el-button>

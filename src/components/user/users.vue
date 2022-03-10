@@ -205,6 +205,7 @@ export default {
                 } else{
                     this.addDialogVisible = false
                     this.$message.success('新增成功')
+                     this.getUserList()
                 }
 
            });

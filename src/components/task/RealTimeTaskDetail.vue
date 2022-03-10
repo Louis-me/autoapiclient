@@ -2,7 +2,7 @@
     <div class="TasksDetail">
         <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item :to="{ path: '/readTimeTask'}">任务管理</el-breadcrumb-item>
+            <el-breadcrumb-item>任务管理</el-breadcrumb-item>
             <el-breadcrumb-item :to="{ path: '/readTimeTask'}">实时任务</el-breadcrumb-item>
             <el-breadcrumb-item>任务详情</el-breadcrumb-item>
 
@@ -39,7 +39,10 @@
                             </el-form-item>
                             <el-form-item label="是否通过">
                                 <span>{{ props.row.result }}</span>
-                            </el-form-item>                          
+                            </el-form-item>  
+                            <el-form-item label="耗时">
+                                <span>{{ props.row.sum_time }}</span>
+                            </el-form-item>                           
                         </el-form>
                     </template>
                 </el-table-column>

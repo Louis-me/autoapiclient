@@ -7,6 +7,7 @@ import './plugins/element.js'
 import 'element-ui/lib/theme-chalk/index.css';
 // 引用axios请求的设置
 import './plugins/axios.js'
+
 Vue.config.productionTip = false
 
 new Vue({
