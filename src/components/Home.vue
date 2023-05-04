@@ -87,6 +87,18 @@
             </template>
           </el-menu-item>
       </el-submenu>
+      <el-submenu index="5">
+          <template slot="title">
+            <i class="el-icon-s-grid"></i>
+            <span>在线日志</span>
+          </template>
+          <el-menu-item :index="'/logs'">
+            <template >
+              <i class="el-icon-menu"></i>
+              <span>日志查看</span>
+            </template>
+          </el-menu-item>
+      </el-submenu>
     </el-menu>
     </el-aside>
     <el-main>

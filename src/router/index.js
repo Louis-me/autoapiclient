@@ -34,6 +34,10 @@ import reportTask from "../components/task/ReportTask.vue"
 import reportListTask from "../components/task/ReportListTask.vue"
 // 报告详情
 import reporDetail from "../components/task/ReportDetail.vue"
+
+// 在线日志
+import logs from "../components/log/Logs.vue"
+
 Vue.use(VueRouter)
 const routes = [
   {
@@ -98,6 +102,11 @@ const routes = [
             path: "/reporDetail/:id",
             component: reporDetail
           },
+          {
+            path: "/logs",
+            component: logs
+          },
+        
     ]
   },
 

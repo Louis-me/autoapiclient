@@ -43,6 +43,7 @@ axios.interceptors.response.use(
     })
  
 // 设置接口访问的根目录
-axios.defaults.baseURL = "http://127.0.0.1:8100/myapi/"
+// axios.defaults.baseURL = " http://127.0.0.1:8000/myapi/"
+axios.defaults.baseURL = " http://www.shikun.work:8081/myapi/"
 // 设置原型属性后,其他地方如果要调用，只要用this.$http.get就可以了
 Vue.prototype.$http = axios
